@@ -1,5 +1,4 @@
-
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import { motion, AnimatePresence, useScroll, useTransform } from "framer-motion";
 import "./index.css";
 
@@ -10,7 +9,7 @@ const projects = [
     name: "NEEDLE",
     type: "AI / AGENTIC COMMERCE",
     desc: "An AI-powered wardrobe platform rethinking how people choose outfits and shop by using what they already own.",
-    tech: ["React", "Node.js", "Gemini", "Supabase"],
+    tech: ["Python", "FastAPI", "React", "Gemini", "Supabase", "Machine Learning"],
     skills: ["AI / ML", "React"],
     accent: "#D5FF72",
     link: "https://github.com/palak-singh3006/needle_ai",
@@ -21,24 +20,48 @@ const projects = [
     number: "02",
     name: "AGENTIC RAG",
     type: "RETRIEVAL / AI SYSTEMS",
-    desc: "A system that retrieves relevant document context and uses it to generate grounded answers with tools.",
-    tech: ["Python", "ChromaDB", "Ollama"],
-    skills: ["AI / ML", "Python", "RAG"],
+    desc: "An agentic retrieval system combining semantic search, contextual document retrieval, and tool-assisted reasoning to generate grounded answers.",
+    tech: ["Python", "ChromaDB", "Sentence Transformers", "Ollama"],
+    skills: ["AI / ML", "Python", "RAG", "LLM Integration"],
     accent: "#C3A6FF",
     link: "",
     shape: "rag-art",
   },
   {
-    id: "campus",
+    id: "vytal",
     number: "03",
-    name: "CAMPUS KNOWLEDGE",
-    type: "KNOWLEDGE / SEARCH",
-    desc: "Exploring semantic search to make campus information easier to find through documents.",
-    tech: ["Python", "Streamlit", "ChromaDB"],
-    skills: ["Python", "RAG", "AI / ML"],
+    name: "VYTAL AI",
+    type: "AI / DIGITAL HEALTH",
+    desc: "An AI-driven chronic disease management platform featuring health risk scoring, digital twin simulations, personalized health coaching, and interactive analytics dashboards.",
+    tech: ["JavaScript", "Node.js", "Express", "Firebase", "Firestore", "OpenAI API", "Chart.js"],
+    skills: ["AI Integration", "Backend Development", "Data Visualization", "Healthcare Analytics"],
     accent: "#8EE4D5",
-    link: "",
-    shape: "campus-art",
+    link: "https://github.com/palak-singh3006/vytal",
+    shape: "vytal-art",
+  },
+  {
+    id: "sos",
+    number: "04",
+    name: "EMERGENCY SOS",
+    type: "AI / EMERGENCY RESPONSE",
+    desc: "An emergency response platform integrating SOS alerts, location access, camera features, multilingual communication, and intelligent assistance.",
+    tech: ["Python", "JavaScript", "HTML", "Tailwind CSS", "Gemini API"],
+    skills: ["AI / ML", "Python", "Generative AI", "Web Development"],
+    accent: "#FF8E8E",
+    link: "https://github.com/palak-singh3006/safetyguard",
+    shape: "sos-art",
+  },
+  {
+    id: "sanjha",
+    number: "05",
+    name: "SANJHA",
+    type: "AGRITECH / COMMUNITY PLATFORM",
+    desc: "A smart agriculture and rural community platform connecting farmers through crop insights, marketplaces, geospatial mapping, analytics, and AI-powered assistance.",
+    tech: ["Next.js", "TypeScript", "Supabase", "Tailwind CSS", "Leaflet", "Recharts", "Gemini AI"],
+    skills: ["Full Stack Development", "AI Integration", "Data Visualization", "Geospatial Systems"],
+    accent: "#E8C989",
+    link: "https://github.com/palak-singh3006/sanjha",
+    shape: "sanjha-art",
   },
 ];
 
@@ -91,6 +114,7 @@ function ProjectCard({ project, onClick }) {
       <div className="project-art">
         <div className="art-index">{project.number}</div>
 
+        {/* NEEDLE */}
         {project.id === "needle" && (
           <div className="needle-graphic">
             <span className="needle-orbit orbit-a" />
@@ -105,6 +129,7 @@ function ProjectCard({ project, onClick }) {
           </div>
         )}
 
+        {/* AGENTIC RAG */}
         {project.id === "rag" && (
           <div className="rag-graphic">
             <div className="rag-node node-a">DOCS</div>
@@ -117,12 +142,94 @@ function ProjectCard({ project, onClick }) {
           </div>
         )}
 
-        {project.id === "campus" && (
-          <div className="campus-graphic">
-            <div className="campus-paper paper-one">KNOWLEDGE</div>
-            <div className="campus-paper paper-two">SEARCH</div>
-            <div className="campus-paper paper-three">EXPLORE ↗</div>
-            <span className="campus-symbol">⌘</span>
+        {/* VYTAL AI */}
+        {project.id === "vytal" && (
+          <div className="vytal-graphic">
+            <div className="vytal-grid" />
+
+            <div className="health-ring ring-one" />
+            <div className="health-ring ring-two" />
+
+            <div className="health-core">
+              <span className="health-cross">+</span>
+              <span>VITAL SIGNS</span>
+            </div>
+
+            <div className="health-card heart-card">
+              <span>HEALTH</span>
+              <strong>↗</strong>
+            </div>
+
+            <div className="health-card data-card">
+              <span>DATA / 24</span>
+              <strong>◒</strong>
+            </div>
+
+            <div className="health-card pulse-card">
+              <span>LIVE MONITOR</span>
+              <div className="pulse-line">∿∿∿∿∿∿∿</div>
+            </div>
+
+            <span className="vytal-label">CARE / INTELLIGENCE</span>
+          </div>
+        )}
+
+        {/* EMERGENCY SOS */}
+        {project.id === "sos" && (
+          <div className="sos-graphic">
+            <div className="sos-radar radar-one" />
+            <div className="sos-radar radar-two" />
+            <div className="sos-radar radar-three" />
+
+            <div className="sos-center">
+              <span className="sos-cross">+</span>
+              <span>SOS</span>
+            </div>
+
+            <div className="sos-pin pin-one">LOCATION</div>
+            <div className="sos-pin pin-two">ALERT / ACTIVE</div>
+
+            <div className="sos-signal">
+              <span />
+              <span />
+              <span />
+            </div>
+
+            <span className="sos-coordinates">
+              RESPONSE SYSTEM / 01
+            </span>
+          </div>
+        )}
+
+        {/* SANJHA */}
+        {project.id === "sanjha" && (
+          <div className="sanjha-graphic">
+            <div className="sanjha-sun" />
+
+            <div className="field field-one" />
+            <div className="field field-two" />
+            <div className="field field-three" />
+            <div className="field field-four" />
+
+            <div className="sanjha-map-pin">
+              <span>✳</span>
+            </div>
+
+            <div className="sanjha-tag tag-one">
+              CROP / INSIGHTS
+            </div>
+
+            <div className="sanjha-tag tag-two">
+              COMMUNITY ↗
+            </div>
+
+            <div className="sanjha-tag tag-three">
+              FIELD 01
+            </div>
+
+            <div className="sanjha-word">
+              SANJHA<span>°</span>
+            </div>
           </div>
         )}
 
@@ -155,50 +262,6 @@ function ProjectCard({ project, onClick }) {
 export default function App() {
   const [activeSkill, setActiveSkill] = useState("ALL");
   const [selected, setSelected] = useState(null);
-  const [gaze, setGaze] = useState({ x: 0, y: 0 });
-
-  // Scroll-reactive eye movement
-  useEffect(() => {
-    let idleTimer;
-
-    const handleWheel = (event) => {
-      const hero = document.getElementById("home");
-      if (!hero) return;
-
-      const rect = hero.getBoundingClientRect();
-
-      // Only react while the hero section is visible
-      if (rect.bottom <= 0 || rect.top >= window.innerHeight) return;
-
-      clearTimeout(idleTimer);
-
-      // Horizontal scrolling
-      if (Math.abs(event.deltaX) > Math.abs(event.deltaY)) {
-        setGaze({
-          x: Math.sign(event.deltaX) * 2.5,
-          y: 0,
-        });
-      } else {
-        // Vertical scrolling
-        setGaze({
-          x: 0,
-          y: Math.sign(event.deltaY) * 2.5,
-        });
-      }
-
-      // Return gaze to center after scrolling stops
-      idleTimer = setTimeout(() => {
-        setGaze({ x: 0, y: 0 });
-      }, 320);
-    };
-
-    window.addEventListener("wheel", handleWheel, { passive: true });
-
-    return () => {
-      window.removeEventListener("wheel", handleWheel);
-      clearTimeout(idleTimer);
-    };
-  }, []);
 
   const { scrollYProgress } = useScroll();
 
@@ -209,7 +272,6 @@ export default function App() {
   );
 
   const avatarY = useTransform(scrollYProgress, [0, 1], [0, -55]);
-
   const avatarRotate = useTransform(scrollYProgress, [0, 1], [0, 3]);
 
   const visibleProjects =
@@ -267,36 +329,6 @@ export default function App() {
             <div className="avatar-halo" />
             <div className="avatar-ring" />
 
-            {/* Animated eyes */}
-            <motion.div
-              className="avatar-eye-layer"
-              style={{
-                scale: avatarScale,
-                y: avatarY,
-                rotate: avatarRotate,
-              }}
-              aria-hidden="true"
-            >
-              <div className="avatar-eye eye-left">
-                <div
-                  className="eye-pupil"
-                  style={{
-                    transform: `translate(${gaze.x}px, ${gaze.y}px)`,
-                  }}
-                />
-              </div>
-
-              <div className="avatar-eye eye-right">
-                <div
-                  className="eye-pupil"
-                  style={{
-                    transform: `translate(${gaze.x}px, ${gaze.y}px)`,
-                  }}
-                />
-              </div>
-            </motion.div>
-
-            {/* Avatar image */}
             <motion.img
               src="/avatar.png"
               alt="Palak's avatar"
@@ -746,7 +778,7 @@ export default function App() {
 
         <div className="contact-links">
           <a
-            href="https://github.com/palak-singh3006/needle_ai"
+            href="https://github.com/palak-singh3006"
             target="_blank"
             rel="noreferrer"
           >
@@ -761,7 +793,7 @@ export default function App() {
             LINKEDIN <span>↗</span>
           </a>
 
-          <a href="mailto:">
+          <a href="mailto:palaksingh3030@gmail.com">
             EMAIL <span>↗</span>
           </a>
         </div>

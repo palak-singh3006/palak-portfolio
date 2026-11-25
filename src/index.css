@@ -1,4 +1,3 @@
-
 @import url('https://fonts.googleapis.com/css2?family=Unbounded:wght@400;500;600;700;800&family=Syne:wght@400;500;600;700;800&family=Instrument+Serif:ital@0;1&family=Space+Mono:wght@400;700&display=swap');
 
 :root {
@@ -698,7 +697,7 @@ button {
   font: 9px var(--tech);
 }
 
-/* PROJECT ART */
+/* NEEDLE ART */
 
 .needle-graphic {
   position: absolute;
@@ -745,6 +744,8 @@ button {
   position: absolute;
   transform: rotate(-8deg);
 }
+
+/* AGENTIC RAG ART */
 
 .rag-graphic {
   position: absolute;
@@ -815,42 +816,387 @@ button {
   transform: rotate(80deg);
 }
 
-.campus-graphic {
+/* ==========================================
+   VYTAL AI — DIGITAL HEALTH ART
+========================================== */
+
+.vytal-graphic {
   position: absolute;
   inset: 0;
   display: grid;
   place-items: center;
+  overflow: hidden;
 }
 
-.campus-paper {
+.vytal-grid {
   position: absolute;
-  padding: 17px 24px;
+  inset: 0;
+  background-image:
+    linear-gradient(rgba(36,36,49,.08) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(36,36,49,.08) 1px, transparent 1px);
+  background-size: 35px 35px;
+  mask-image: linear-gradient(to bottom, black, transparent);
+}
+
+.health-ring {
+  position: absolute;
+  border-radius: 50%;
+  border: 1px solid rgba(36,36,49,.2);
+}
+
+.ring-one {
+  width: 200px;
+  height: 200px;
+  animation: spin 30s linear infinite;
+}
+
+.ring-two {
+  width: 270px;
+  height: 270px;
+  border-style: dashed;
+  animation: spin 45s linear infinite reverse;
+}
+
+.health-core {
+  width: 120px;
+  height: 120px;
+  background: var(--ink);
+  color: var(--cream);
+  border-radius: 50%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+  z-index: 2;
+  box-shadow: 0 0 0 12px rgba(36,36,49,.06);
+}
+
+.health-cross {
+  font: 500 55px var(--main);
+  color: var(--teal);
+  line-height: .8;
+}
+
+.health-core > span:last-child {
+  font: 7px var(--tech);
+}
+
+.health-card {
+  position: absolute;
   background: var(--cream);
   border: 1px solid var(--ink);
-  font: 10px var(--tech);
-  box-shadow: 5px 6px 0 rgba(36,36,49,.12);
+  padding: 12px;
+  box-shadow: 4px 5px 0 rgba(36,36,49,.1);
+  z-index: 3;
 }
 
-.paper-one {
-  transform: rotate(-10deg) translate(-30px,-30px);
+.health-card span {
+  font: 8px var(--tech);
 }
 
-.paper-two {
-  transform: rotate(9deg) translate(30px,10px);
-  background: var(--purple);
+.health-card strong {
+  display: block;
+  font: 30px var(--main);
+  margin-top: 4px;
 }
 
-.paper-three {
-  transform: rotate(-3deg) translate(5px,65px);
-  background: var(--lime);
+.heart-card {
+  top: 22%;
+  left: 13%;
+  transform: rotate(-9deg);
 }
 
-.campus-symbol {
-  font-size: 65px;
+.heart-card strong {
+  color: #E87F8A;
+}
+
+.data-card {
+  right: 12%;
+  top: 25%;
+  transform: rotate(8deg);
+}
+
+.data-card strong {
+  color: var(--teal-dark);
+}
+
+.pulse-card {
+  bottom: 20%;
+  left: 50%;
+  transform: translateX(-50%) rotate(-2deg);
+  width: 175px;
+}
+
+.pulse-line {
+  font: 20px var(--tech);
+  color: var(--teal-dark);
+  margin-top: 8px;
+  letter-spacing: 3px;
+  overflow: hidden;
+}
+
+.vytal-label {
   position: absolute;
   bottom: 15%;
-  right: 12%;
-  opacity: .5;
+  right: 10%;
+  font: 8px var(--tech);
+  opacity: .6;
+}
+
+/* ==========================================
+   EMERGENCY SOS — RESPONSE ART
+========================================== */
+
+.sos-graphic {
+  position: absolute;
+  inset: 0;
+  display: grid;
+  place-items: center;
+  overflow: hidden;
+}
+
+.sos-radar {
+  position: absolute;
+  border: 1px solid rgba(36,36,49,.2);
+  border-radius: 50%;
+}
+
+.radar-one {
+  width: 130px;
+  height: 130px;
+}
+
+.radar-two {
+  width: 220px;
+  height: 220px;
+  border-style: dashed;
+  animation: spin 25s linear infinite;
+}
+
+.radar-three {
+  width: 300px;
+  height: 300px;
+  border-color: rgba(36,36,49,.12);
+}
+
+.sos-center {
+  width: 100px;
+  height: 100px;
+  background: var(--ink);
+  color: var(--cream);
+  border-radius: 50%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  z-index: 2;
+  box-shadow: 0 0 0 14px rgba(36,36,49,.06);
+}
+
+.sos-cross {
+  font: 50px var(--main);
+  color: #FF8E8E;
+  line-height: .8;
+}
+
+.sos-center span:last-child {
+  font: 11px var(--tech);
+  margin-top: 8px;
+}
+
+.sos-pin {
+  position: absolute;
+  background: var(--cream);
+  border: 1px solid var(--ink);
+  padding: 10px 12px;
+  font: 8px var(--tech);
+  box-shadow: 4px 4px 0 rgba(36,36,49,.12);
+  z-index: 3;
+}
+
+.pin-one {
+  top: 23%;
+  left: 12%;
+  transform: rotate(-8deg);
+}
+
+.pin-two {
+  right: 9%;
+  bottom: 24%;
+  background: var(--ink);
+  color: var(--cream);
+  transform: rotate(5deg);
+}
+
+.sos-signal {
+  position: absolute;
+  top: 18%;
+  right: 20%;
+  display: flex;
+  gap: 5px;
+  align-items: flex-end;
+}
+
+.sos-signal span {
+  display: block;
+  width: 5px;
+  background: var(--ink);
+  animation: signalPulse 1.2s ease-in-out infinite;
+}
+
+.sos-signal span:nth-child(1) {
+  height: 15px;
+}
+
+.sos-signal span:nth-child(2) {
+  height: 25px;
+  animation-delay: .2s;
+}
+
+.sos-signal span:nth-child(3) {
+  height: 35px;
+  animation-delay: .4s;
+}
+
+.sos-coordinates {
+  position: absolute;
+  bottom: 15%;
+  left: 10%;
+  font: 8px var(--tech);
+  opacity: .65;
+}
+
+@keyframes signalPulse {
+  0%, 100% {
+    transform: scaleY(.5);
+    opacity: .5;
+  }
+
+  50% {
+    transform: scaleY(1);
+    opacity: 1;
+  }
+}
+
+/* ==========================================
+   SANJHA — AGRITECH / COMMUNITY ART
+========================================== */
+
+.sanjha-graphic {
+  position: absolute;
+  inset: 0;
+  display: grid;
+  place-items: center;
+  overflow: hidden;
+}
+
+.sanjha-sun {
+  position: absolute;
+  width: 105px;
+  height: 105px;
+  background: rgba(243,238,223,.55);
+  border-radius: 50%;
+  top: 15%;
+  right: 18%;
+}
+
+.field {
+  position: absolute;
+  width: 150%;
+  height: 90px;
+  border: 1px solid rgba(36,36,49,.22);
+  border-radius: 50%;
+  left: -25%;
+}
+
+.field-one {
+  bottom: 10%;
+  background: rgba(25,108,103,.18);
+  transform: rotate(-15deg);
+}
+
+.field-two {
+  bottom: 20%;
+  background: rgba(25,108,103,.12);
+  transform: rotate(-15deg);
+}
+
+.field-three {
+  bottom: 30%;
+  background: rgba(25,108,103,.1);
+  transform: rotate(-15deg);
+}
+
+.field-four {
+  bottom: 40%;
+  background: rgba(25,108,103,.08);
+  transform: rotate(-15deg);
+}
+
+.sanjha-map-pin {
+  width: 58px;
+  height: 58px;
+  background: var(--ink);
+  color: var(--cream);
+  border-radius: 50% 50% 50% 0;
+  transform: rotate(-45deg);
+  display: grid;
+  place-items: center;
+  position: absolute;
+  top: 27%;
+  left: 42%;
+  box-shadow: 5px 6px 0 rgba(36,36,49,.15);
+  z-index: 4;
+}
+
+.sanjha-map-pin span {
+  transform: rotate(45deg);
+  color: var(--lime);
+  font-size: 25px;
+}
+
+.sanjha-tag {
+  position: absolute;
+  padding: 10px 12px;
+  border: 1px solid var(--ink);
+  background: var(--cream);
+  font: 8px var(--tech);
+  box-shadow: 4px 5px 0 rgba(36,36,49,.1);
+  z-index: 4;
+}
+
+.tag-one {
+  top: 23%;
+  left: 10%;
+  transform: rotate(-8deg);
+}
+
+.tag-two {
+  top: 37%;
+  right: 10%;
+  background: var(--lime);
+  transform: rotate(7deg);
+}
+
+.tag-three {
+  bottom: 22%;
+  left: 17%;
+  transform: rotate(5deg);
+}
+
+.sanjha-word {
+  position: absolute;
+  bottom: 24%;
+  right: 13%;
+  font: 800 32px var(--crazy);
+  letter-spacing: -.09em;
+  transform: rotate(-5deg);
+  z-index: 3;
+}
+
+.sanjha-word span {
+  color: var(--teal-dark);
 }
 
 /* FILTER / MODAL */
@@ -1079,6 +1425,7 @@ button {
     transform: scale(1);
     opacity: .75;
   }
+
   50% {
     transform: scale(1.08);
     opacity: .95;
@@ -1246,6 +1593,24 @@ button {
   .footer {
     flex-direction: column;
     margin-top: 80px;
+  }
+
+  .ring-two {
+    width: 220px;
+    height: 220px;
+  }
+
+  .pulse-card {
+    width: 155px;
+  }
+
+  .radar-three {
+    width: 260px;
+    height: 260px;
+  }
+
+  .sanjha-word {
+    font-size: 26px;
   }
 }
 
